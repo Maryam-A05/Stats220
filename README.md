@@ -1,8 +1,8 @@
 # Stats220 
 
-# Heading Level 1 This is my repo for STATS 220. 
+# This is my repo for STATS 220. 
 
-## Heading level 2 little about me:
+## Little about me:
 
 1. I am undertaking a degree in **bioloigcal science** in hopes of either
    - *continuing in my postgraduates degree*
