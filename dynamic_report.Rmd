@@ -53,6 +53,9 @@ mean_how_long <- mean(logged_data$how_long)
 
 summary(logged_data, na.rm = TRUE)
 
+url <- ("https://images.squarespace-cdn.com/content/v1/5a6e9e40d74cff1bb7b36d48/1571415688406-ZB2Y0ENPKGLYCOLJCWE8/image-asset.jpeg")
+cat_learning <- image_read(url)
+
 
 ```
 
