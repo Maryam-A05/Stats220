@@ -3,25 +3,61 @@ title: My dynamic report
 output: html_fragment
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, echo= FALSE}
 knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
-
+library(tidyverse)
 ```
 
 ```{css}
+body {background-color: lightyellow;}
+h2 {color: purple; text-align: center;}
+```
+
+## How often/long do we spend on our phones?
+This data was collected to see if me and my brother have a problem with the amounts of time we use our phones and if we can decrease our phone usage. 
+
+```{r, echo=FALSE}
+
+csv_file <- ("https://docs.google.com/spreadsheets/d/e/2PACX-1vQJjO9soJsTDnv-CAuiSbopEwqyuSHt3bVN4qt8DGMd71TXuVhGAzpLMEaDoB3kLyBoEpWEsFhjguZS/pub?output=csv")
+
+logged_data <- read_csv(csv_file)%>%
+rename(how_often= 3,
+       causes= 4,
+       how_long= 5,
+       what_apps= 6)
+
+first_rows <- logged_data %>%
+  slice(1:6)
+
+last_rows<- logged_data %>%
+ slice(15: nrow(logged_data)) 
+
+
+ggplot(data = logged_data) +
+  geom_bar(aes(x = how_often, fill = causes)) +
+       labs(title = "How Often We Go on Our Phones",
+       subtitle = "Compering how often me and my brother go on our phones",
+       x = "The amount of times we picked up our phones",
+       y = "What caused us to pick up our phones")
+
+ggplot(data = logged_data) +
+  geom_bar(aes(x = how_long, fill = what_apps)) +
+           labs(title = "How Long We Spend on our Phones",
+           subtitle = "Compering how long me and my brother spend on our phones",
+           caption = "Source: iPhone Screen Time",
+           x = "Time spend on our phones",
+           y = "Which apps were used")
+
+mean_how_often <- mean(logged_data$how_often)
+mean_how_long <- mean(logged_data$how_long)
+
+summary(logged_data, na.rm = TRUE)
+
 
 ```
 
-## What's going on with this data?
+The average time of how often me and my brother picked up our phones was `r mean_how_often` and the the average for the time spent on our phones was `r mean_how_long`. 
 
-You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
+By looking at the data we saw that our phone usage is high and we tend to use our phones more often when we are bored. We can also see that we tend to spend most of our time on Instagram in comparison to other apps.
 
-```{r}
-pets <- c("cat", "dog", "turtle", "rabbit")
-best_pet <- pets[1]
-
-```
-
-The best pet to have is a `r best_pet` of course!
-
-![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
+From the data we were able to conclude that we need to decrease our phone usage and make sure that we can find ways to make sure we are being productive or ingaging in other activities that will be more beneficial for us instead of using our phones. 
