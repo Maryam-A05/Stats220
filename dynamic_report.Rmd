@@ -58,6 +58,6 @@ summary(logged_data, na.rm = TRUE)
 
 The average time of how often me and my brother picked up our phones was `r mean_how_often` and the the average for the time spent on our phones was `r mean_how_long`. 
 
-By looking at the data we saw that our phone usage is high and we tend to use our phones more often when we are bored. We can also see that we tend to spend most of our time on Instagram in comparison to other apps.
+By looking at the data we saw that our phone usage is high and we tend to use our phones more often when we are bored and receive. We can also see that we tend to spend most of our time on Instagram and TikTok in comparison to other apps.
 
 From the data we were able to conclude that we need to decrease our phone usage and make sure that we can find ways to make sure we are being productive or ingaging in other activities that will be more beneficial for us instead of using our phones. 
